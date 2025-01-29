@@ -11,3 +11,20 @@ work the same in all machines. Docker help us to build consistently : build , ru
 ## What is the Docker Architecture
 
 Docker architecture is based on a client-server model where the Docker client interacts with the Docker daemon (server) to build, run, and manage containers. The daemon handles tasks like creating, starting, and stopping containers, while images (read-only templates) are stored in a registry (e.g., Docker Hub). Containers are lightweight, isolated environments that run applications using the host OS kernel, ensuring consistency across different environments.
+
+## Docker image
+
+A **Docker image** is a lightweight, standalone, and executable package that includes everything needed to run an application (code, runtime, libraries, and dependencies). For example, an image like `nginx:latest` contains the Nginx web server and its dependencies.
+
+## Docker File
+
+A **Dockerfile** is a text file that contains instructions to build a Docker image. It defines the base image, adds files, sets environment variables, and specifies commands to run. For example:
+
+```Dockerfile
+FROM ubuntu:20.04
+COPY . /app
+RUN make /app
+CMD ["python", "/app/app.py"]
+```
+
+This Dockerfile creates an image starting from Ubuntu, copies files, runs a build command, and sets the default command to run the app.
