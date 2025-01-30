@@ -1,59 +1,114 @@
-## What is the Docker ?
+What is Docker?
 
-A platform for building , running and shipping applications. packages of tools that
-work the same in all machines. Docker help us to build consistently : build , run and ship applications.
+Docker is a platform for building, running, and shipping applications. It provides a package of tools that work consistently across all machines, helping developers achieve consistency in the development and deployment process.
 
-## What is the differece between container and Virtual Machine ?
+Difference Between Container and Virtual Machine
 
-**Container:** An isolated environment for running an application
-**Virtual machine:** An abstraction of machine(physical hardware)
+Container: An isolated environment for running an application that shares the host OS kernel, making it lightweight and efficient.
 
-## What is the Docker Architecture
+Virtual Machine: An abstraction of a physical machine, including the entire OS, which consumes more resources compared to containers.
 
-Docker architecture is based on a client-server model where the Docker client interacts with the Docker daemon (server) to build, run, and manage containers. The daemon handles tasks like creating, starting, and stopping containers, while images (read-only templates) are stored in a registry (e.g., Docker Hub). Containers are lightweight, isolated environments that run applications using the host OS kernel, ensuring consistency across different environments.
+Docker Architecture
 
-## Docker image
+Docker follows a client-server architecture where:
 
-A **Docker image** is a lightweight, standalone, and executable package that includes everything needed to run an application (code, runtime, libraries, and dependencies). For example, an image like `nginx:latest` contains the Nginx web server and its dependencies.
+Docker Client: The user interacts with the Docker client to issue commands.
 
-## Docker File
+Docker Daemon: The server (daemon) handles tasks such as creating, starting, and stopping containers.
 
-A **Dockerfile** is a text file that contains instructions to build a Docker image. It defines the base image, adds files, sets environment variables, and specifies commands to run. For example:
+Images: Read-only templates for creating containers, stored in registries (e.g., Docker Hub).
 
-```Dockerfile
+Containers: Lightweight, isolated environments that run applications using the host OS kernel.
+
+Docker Image
+
+A Docker image is a lightweight, standalone, executable package that includes everything needed to run an application, such as code, runtime, libraries, and dependencies.
+
+Example:
+
+nginx:latest contains the Nginx web server and its dependencies.
+
+Dockerfile
+
+A Dockerfile is a text file containing instructions to build a Docker image. It defines the base image, adds files, sets environment variables, and specifies commands to run.
+
+Example Dockerfile:
+
 FROM ubuntu:20.04
 COPY . /app
 RUN make /app
 CMD ["python", "/app/app.py"]
-```
 
 This Dockerfile creates an image starting from Ubuntu, copies files, runs a build command, and sets the default command to run the app.
 
-# Basic Linux
+Basic Linux
 
-## Linux distribution
+Linux Distribution
 
-A Linux distribution (or "distro") is a version of the Linux operating system packaged with software, tools, and a desktop environment. It’s like a ready-to-use version of Linux, designed for different needs, such as ease of use, security, or customization. Popular examples include Ubuntu, Fedora, and Debian.
+A Linux distribution (or "distro") is a version of the Linux operating system packaged with software, tools, and a desktop environment. Different distros serve different needs, such as ease of use, security, or customization.
 
-## Simple linux shell commands
-This Docker shell script:
+Popular Examples:
 
-1. `echo hello` - Prints "hello".
-2. `whoami` - Displays the current user.
-3. `echo $0` - Prints the name of the script or shell being executed.
-4. `pwd` - Print work directory 
-5.  `ls` - List
-6. `cd` - go into specific folder after it but if write `cd ~` it's go into home
-7. `mkdir` - it used to create folder after mdkir sepcifie the folder name
-8. `mv` - for rename file and folders or moving file to another folder first previus name then new one
-9. `touch` - for create new file after it specifie the file with their type also in one command we can create multiple files
-10. `rm` - for remove the files also for remove directory you need to write like this `rm -r directoryName`
-11. `cat` - one way of seeing files in linux is good for short files also if you write the name of two file it will combine and print the both
-12. `more` - use for large file but the problem is show list of file but when you scroll you can go to the top
-13. `less` - install the less to have ablitiy to go up and dow
-14. `head -n` - then specifie the number wich mean how many line do you wants to see 
-15. `tail -n` - oppsite of head you sepcifie the number and will show the last line of that file
-16. `cat file1.txt > file2.txt` - now it's copay all data from file1.txt and create same call file2.txt
-by writing `cat file1.txt file2.txt > combine.txt` this will copy and data of file1.txt and file2.txt into combine.txt
-also it this `>` is not only for cat it's work in other part like this `echo hello > hello.txt` now we have new file 
-call hello.txt that have hello text inside of it.
+Ubuntu: User-friendly and popular for development.
+
+Fedora: Known for its cutting-edge software.
+
+Debian: Stable and widely used.
+
+Simple Linux Shell Commands
+
+echo hello: Prints "hello".
+
+whoami: Displays the current user.
+
+echo $0: Prints the name of the script or shell being executed.
+
+pwd: Prints the working directory.
+
+ls: Lists the files and directories.
+
+cd: Changes the directory.
+
+Example: cd ~ navigates to the home directory.
+
+mkdir folderName: Creates a directory.
+
+mv oldName newName: Renames or moves a file/directory.
+
+touch fileName.txt: Creates a file (supports multiple files in one command).
+
+rm fileName: Removes files.
+
+rm -r directoryName: Removes directories.
+
+cat fileName: Displays the contents of a file.
+
+cat file1 file2: Combines and displays both files.
+
+more fileName: Displays large files (scrolling only downward).
+
+less fileName: Similar to more but allows scrolling up and down.
+
+head -n X fileName: Displays the first X lines of a file.
+
+tail -n X fileName: Displays the last X lines of a file.
+
+Copy Files Using cat:
+
+cat file1.txt > file2.txt: Copies content from file1.txt to file2.txt.
+
+cat file1.txt file2.txt > combined.txt: Combines content into a new file.
+
+Redirect Output:
+
+echo hello > hello.txt: Creates hello.txt with "hello" inside.
+
+Search Commands
+
+grep -i searchTerm fileName.txt: Searches for "searchTerm" in the file.
+
+-i: Ignore case sensitivity.
+
+Can search in multiple files by specifying them.
+
+These organized notes provide clarity and better command segmentation for efficient reference.
