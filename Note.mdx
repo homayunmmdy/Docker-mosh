@@ -147,3 +147,14 @@ The managing process in Linux involves controlling and monitoring running progra
 `usermod` - for modife the user 
 `userdel` - for deleting the user
 this users are save in configuration here `/etc/passwd` also password are here `/etc/shadow`
+
+## Managing Group
+we have similar command like manage user 
+`groupadd`,`groupmod`, `groupdel`
+and list groups are saved in `cat /etc/group`
+here how add user into group 
+`usermod -G groupName userName`
+also you can find the exact user in passwd and other file like this 
+`grep userName /directory`
+here is way to see the user is join in which groups 
+`groups userName`
