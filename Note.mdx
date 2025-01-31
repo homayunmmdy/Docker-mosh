@@ -119,3 +119,16 @@ These organized notes provide clarity and better command segmentation for effici
 `find /etc` - now it's all the files in etc directory
 `find -type d` - show all the directories
 `find -type f` - show all the files
+
+## Chainig Commands
+for running multiple command at same row we use this `;` here is Example
+`mkdir test ; cd test ; echo doen`
+but here if we go `cd ..` back and run the smae command it will show error for the first command 
+excute the rest but if we use and opperator if the first command filed it will no excute the rest 
+`mkdir test && cd test && echo doen`
+also we have or operating to render one side if it wounld be true 
+`mkdir test || echo 'directory exist'`
+if we have long command that we need to scroll horizontally do this 
+`mkdir hello;\
+`
+now go the next line and write the rest
