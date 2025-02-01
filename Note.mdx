@@ -162,3 +162,11 @@ here is way to see the user is join in which groups
 ## file premissions
 The chmod u+x deploy.sh command in Linux grants the user (owner) of the file deploy.sh the permission to execute it. The u stands for the user, and +x adds the execute permission. This allows the owner to run the script as a program.
 
+# Containers vs Images
+In Docker, **images** and **containers** are closely related but serve different purposes:
+
+1. **Images**: These are read-only templates or blueprints that contain the application code, libraries, dependencies, and configuration needed to run an application. Images are built from Dockerfiles and stored in registries like Docker Hub.
+
+2. **Containers**: These are running instances of Docker images. When you start an image, it becomes a container, which is a lightweight, isolated environment where the application runs. Containers are ephemeral and can be started, stopped, or deleted.
+
+In short, an **image** is the static definition of an application, while a **container** is the dynamic, running instance of that image.
