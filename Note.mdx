@@ -208,3 +208,10 @@ for see list of containers we use
 `docker run react-app` : to run image but now we can't do anything on that terminal like npm run dev vite 
 `docker run -d react-app` : now is create container that we can work on it to reference this we can use id or name and this render autanmitlcally 
 `docker run -d --name container-name react-app` : now generate contianer with custome name
+
+## Viewing the logs
+`docker logs idOfContainer` : to see the log and output of continaner
+`docker logs -f idOfContainer` : to follow the log
+`docker logs -n limiOfLineToShow idOfContainer` : usefull if you have long log
+`docker logs -n limiOfLineToShow idOfContainer` : usefull if you have long log
+`docker logs -t idOfContainer` : To see the time of each log 
