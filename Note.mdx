@@ -191,3 +191,13 @@ here are example
 
 ## Image tag
 In Docker, a tag is a label applied to a Docker image to identify a specific version or variant of that image. Tags are typically used to differentiate between different builds, versions, or environments (e.g., latest, v1.0, prod). For example, if you have an image named myapp, you can tag it as myapp:v1.0 for version 1.0 and myapp:latest for the most recent build.
+
+## Save and load Images 
+docker save exports an image as a tar file, allowing you to transfer it between systems. docker load imports the saved image back into Docker. Example:
+
+sh
+Copy
+Edit
+docker save -o myimage.tar myimage  
+docker load -i myimage.tar  
+Use them to move images without needing a registry.
