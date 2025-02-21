@@ -201,3 +201,10 @@ Edit
 docker save -o myimage.tar myimage  
 docker load -i myimage.tar  
 Use them to move images without needing a registry.
+
+## Containers 
+for see list of containers we use 
+`docker run ps` : to see list of all containers 
+`docker run react-app` : to run image but now we can't do anything on that terminal like npm run dev vite 
+`docker run -d react-app` : now is create container that we can work on it to reference this we can use id or name and this render autanmitlcally 
+`docker run -d --name container-name react-app` : now generate contianer with custome name
