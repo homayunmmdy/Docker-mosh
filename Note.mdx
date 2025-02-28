@@ -256,3 +256,39 @@ Volumes are stored in a directory on the host machine (managed by Docker) and ca
 `docker image ls -q` : Only get the id of the images
 `docker container rm $(docker container ls -aq)` : remove all container in one go
 `docker images rm $(docker images ls -aq)` : remove all images in one go
+
+## JSON and UAML formats
+json is way to reposend the data into human understnad here is example 
+
+```json
+{
+  "name": "The Ultimate Docker Course",
+  "price": 149,
+  "is_published": true,
+  "tags": ["software", "devops"],
+  "author": {
+    "first_name": "Homayoun",
+    "last_name": "Mohammadi"
+  }
+}
+```
+
+here is the yml same json with different format and easy to understnad here is the example 
+
+```yml
+---
+
+name: The Ultimate Docker Course
+price: 149
+is_published: true
+tags: 
+  - software
+  - devops
+author: 
+  first_name: Homayoun
+  last_name: Mohammadi
+
+```
+
+why we don't use yml all the time ?
+because parcing yml is little slower than json
