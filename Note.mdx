@@ -244,3 +244,7 @@ docker volume create app-data: Creates a new Docker volume named app-data.
 docker volume inspect app-data: Provides detailed information about the app-data volume, such as its mount point, creation date, and other metadata.
 
 Volumes are stored in a directory on the host machine (managed by Docker) and can be shared among multiple containers. They ensure data persistence, improve performance, and simplify data management in containerized environments.
+
+## Copying Files between the HOst and Continaers
+`docker cp contianerId:the-address-of-file .`: Now the file is added in the host direcotry
+`docker cp fileName.format container-id:the-address-of-file: now we are copying the one file into contianer
