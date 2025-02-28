@@ -248,3 +248,6 @@ Volumes are stored in a directory on the host machine (managed by Docker) and ca
 ## Copying Files between the HOst and Continaers
 `docker cp contianerId:the-address-of-file .`: Now the file is added in the host direcotry
 `docker cp fileName.format container-id:the-address-of-file: now we are copying the one file into contianer
+
+## Sharing the Source code with a contianer 
+`docker run -d -p 5001:3000 -v $(pwd):/app react-app`
