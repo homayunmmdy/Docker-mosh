@@ -1,6 +1,7 @@
 FROM node:alpine3.20
 RUN addgroup app && adduser -S -G app app
 WORKDIR /app
+RUN mkdir data
 COPY package*.json .
 RUN chown -R app:app /app
 USER app
