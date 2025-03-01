@@ -114,6 +114,7 @@ Can search in multiple files by specifying them.
 These organized notes provide clarity and better command segmentation for efficient reference.
 
 ## Finding files and directories
+
 `find` - that show all the files and directories also the hidden ones tools
 `ls -a` - show all hidden files tools
 `find /etc` - now it's all the files in etc directory
@@ -121,18 +122,21 @@ These organized notes provide clarity and better command segmentation for effici
 `find -type f` - show all the files
 
 ## Chainig Commands
+
 for running multiple command at same row we use this `;` here is Example
 `mkdir test ; cd test ; echo doen`
-but here if we go `cd ..` back and run the smae command it will show error for the first command 
-excute the rest but if we use and opperator if the first command filed it will no excute the rest 
+but here if we go `cd ..` back and run the smae command it will show error for the first command
+excute the rest but if we use and opperator if the first command filed it will no excute the rest
 `mkdir test && cd test && echo doen`
-also we have or operating to render one side if it wounld be true 
+also we have or operating to render one side if it wounld be true
 `mkdir test || echo 'directory exist'`
-if we have long command that we need to scroll horizontally do this 
+if we have long command that we need to scroll horizontally do this
 `mkdir hello;\
 `
 now go the next line and write the rest
+
 ## environment variables
+
 `printev` - to print all the environment variables
 `printev PATH` - to see the path of Linux
 `echo $PATH` - another way of seeing PATH
@@ -140,29 +144,34 @@ now go the next line and write the rest
 `echo UB_USER=homayoun >> .bashrc` - now it's append DB_USER to .bashrc
 
 ## Manageing Processes
+
 The managing process in Linux involves controlling and monitoring running programs. The ps command lists active processes with details like PID and status. The sleep command pauses a process for a specified time. The kill command terminates a process using its PID.
 
 ## Manage Users
-`useradd` - for adding user 
-`usermod` - for modife the user 
+
+`useradd` - for adding user
+`usermod` - for modife the user
 `userdel` - for deleting the user
 this users are save in configuration here `/etc/passwd` also password are here `/etc/shadow`
 
 ## Managing Group
-we have similar command like manage user 
+
+we have similar command like manage user
 `groupadd`,`groupmod`, `groupdel`
 and list groups are saved in `cat /etc/group`
-here how add user into group 
+here how add user into group
 `usermod -G groupName userName`
-also you can find the exact user in passwd and other file like this 
+also you can find the exact user in passwd and other file like this
 `grep userName /directory`
-here is way to see the user is join in which groups 
+here is way to see the user is join in which groups
 `groups userName`
 
 ## file premissions
+
 The chmod u+x deploy.sh command in Linux grants the user (owner) of the file deploy.sh the permission to execute it. The u stands for the user, and +x adds the execute permission. This allows the owner to run the script as a program.
 
 # Containers vs Images
+
 In Docker, **images** and **containers** are closely related but serve different purposes:
 
 1. **Images**: These are read-only templates or blueprints that contain the application code, libraries, dependencies, and configuration needed to run an application. Images are built from Dockerfiles and stored in registries like Docker Hub.
@@ -172,6 +181,7 @@ In Docker, **images** and **containers** are closely related but serve different
 In short, an **image** is the static definition of an application, while a **container** is the dynamic, running instance of that image.
 
 ### Dockerfiles commands
+
 - from (base image)
 - workdir (working direcotry)
 - Copy/And (file transfer)
@@ -182,17 +192,20 @@ In short, an **image** is the static definition of an application, while a **con
 - CMD (default command)
 - entrypoint (main command)
 
-## Dockerfile order 
+## Dockerfile order
+
 you should write the command that change less at the top and those change frequently at the bottom
 
 Prune is a Docker command (docker system prune) that removes unused images, containers, volumes, and networks to free up disk space. It identifies and deletes resources not associated with running containers, ensuring a cleaner and more efficient system.
-here are example 
+here are example
 `docker image prune` also `docker container prune`
 
 ## Image tag
+
 In Docker, a tag is a label applied to a Docker image to identify a specific version or variant of that image. Tags are typically used to differentiate between different builds, versions, or environments (e.g., latest, v1.0, prod). For example, if you have an image named myapp, you can tag it as myapp:v1.0 for version 1.0 and myapp:latest for the most recent build.
 
-## Save and load Images 
+## Save and load Images
+
 docker save exports an image as a tar file, allowing you to transfer it between systems. docker load imports the saved image back into Docker. Example:
 
 sh
@@ -202,40 +215,48 @@ docker save -o myimage.tar myimage
 docker load -i myimage.tar  
 Use them to move images without needing a registry.
 
-## Containers 
-for see list of containers we use 
-`docker run ps` : to see list of all containers 
-`docker run react-app` : to run image but now we can't do anything on that terminal like npm run dev vite 
-`docker run -d react-app` : now is create container that we can work on it to reference this we can use id or name and this render autanmitlcally 
+## Containers
+
+for see list of containers we use
+`docker run ps` : to see list of all containers
+`docker run react-app` : to run image but now we can't do anything on that terminal like npm run dev vite
+`docker run -d react-app` : now is create container that we can work on it to reference this we can use id or name and this render autanmitlcally
 `docker run -d --name container-name react-app` : now generate contianer with custome name
 
 ## Viewing the logs
+
 `docker logs idOfContainer` : to see the log and output of continaner
 `docker logs -f idOfContainer` : to follow the log
 `docker logs -n limiOfLineToShow idOfContainer` : usefull if you have long log
 `docker logs -n limiOfLineToShow idOfContainer` : usefull if you have long log
-`docker logs -t idOfContainer` : To see the time of each log 
+`docker logs -t idOfContainer` : To see the time of each log
 
-## Publich port 
+## Publich port
+
 `docker run -d -p port:port --name nameofContinaer imageName`
 
 ## Eexcuting Commands in Running Continaers
+
 `docker exec` : excute command in running container
-`docker exec -t continaer-name sh` : show we go to sh of it and we can work on their too 
+`docker exec -t continaer-name sh` : show we go to sh of it and we can work on their too
 
 ## Stopping and Starting Continaers
+
 `docker stop container-name` : to stop the running container
 `docker start contaienr-name` : to start the contaienr
 with docker run we start new contianer but with docker start we start stop container
 
-## Remove Container 
+## Remove Container
+
 `docker continaer rm name-contianer` or `docker rm name-container` : both remove container but contianer must be stopped
 `docker rm -f name-contianer`: now it force and dosen't matter contianer is running or not it will remove it anyway
 
 ## Containers File System
+
 each contianer are isolate place for example if we store value in one conatiner the second container will not have it
 
-## Presisting Data using Volumes 
+## Presisting Data using Volumes
+
 Docker volumes are a mechanism for persistently storing data generated by and used by Docker containers. Unlike data stored in a container's writable layer, which is ephemeral and tied to the container's lifecycle, volumes exist independently of containers. This makes them ideal for preserving data even when containers are stopped, removed, or replaced.
 
 Key Commands:
@@ -246,19 +267,23 @@ docker volume inspect app-data: Provides detailed information about the app-data
 Volumes are stored in a directory on the host machine (managed by Docker) and can be shared among multiple containers. They ensure data persistence, improve performance, and simplify data management in containerized environments.
 
 ## Copying Files between the HOst and Continaers
+
 `docker cp contianerId:the-address-of-file .`: Now the file is added in the host direcotry
 `docker cp fileName.format container-id:the-address-of-file: now we are copying the one file into contianer
 
-## Sharing the Source code with a contianer 
+## Sharing the Source code with a contianer
+
 `docker run -d -p 5001:3000 -v $(pwd):/app react-app`
 
 ## Cleaning Up our workspace
+
 `docker image ls -q` : Only get the id of the images
 `docker container rm $(docker container ls -aq)` : remove all container in one go
 `docker images rm $(docker images ls -aq)` : remove all images in one go
 
 ## JSON and UAML formats
-json is way to reposend the data into human understnad here is example 
+
+json is way to reposend the data into human understnad here is example
 
 ```json
 {
@@ -273,22 +298,60 @@ json is way to reposend the data into human understnad here is example
 }
 ```
 
-here is the yml same json with different format and easy to understnad here is the example 
+here is the yml same json with different format and easy to understnad here is the example
 
 ```yml
 ---
-
 name: The Ultimate Docker Course
 price: 149
 is_published: true
-tags: 
+tags:
   - software
   - devops
-author: 
+author:
   first_name: Homayoun
   last_name: Mohammadi
-
 ```
 
 why we don't use yml all the time ?
 because parcing yml is little slower than json
+
+## Creating a Compose File
+
+create file with `docker-compose.yml` name all lowercase
+the first is define version for it
+`version: "3.8"`
+define the services that our application need like this
+
+the name here are arbetrori the idea is we create different image and telling the docker
+how to run that and build that image
+
+```
+services:
+  frontend:
+    depends_on:
+      - backend
+    build: ./frontend
+    ports:
+      - 3000:3000
+
+  backend:
+    depends_on:
+      - db
+    build: ./backend
+    ports:
+      - 3001:3001
+    environment:
+      DB_URL: mongodb://db/vidly
+    command: ./docker-entrypoint.sh
+
+  db:
+    image: mongo:4.0-xenial
+    ports:
+      - 27017:27017
+    volumes:
+      - vidly:/data/db
+
+volumes:
+  vidly:
+```
