@@ -375,3 +375,6 @@ in the application we have three host that are talk to each other client api and
 ## Viewing Logs
 `docker-compose logs` : to see the log of all application in one place 
 `docker logs containerId` : too see the log of only that contianer
+
+## Publishing Changes
+the volumes directive is used to manage persistent data storage for the services. For the frontend and backend services, the volumes field maps the local ./backend directory to the /app directory inside the container, enabling file sharing and live code updates. For the db service, a named volume vidly is used to persist MongoDB data at /data/db, ensuring data is retained even if the container is restarted or removed. The volumes section at the bottom defines the vidly volume for use across the services.

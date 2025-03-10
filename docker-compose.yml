@@ -7,6 +7,8 @@ services:
     build: ./frontend
     ports:
       - 3000:3000
+    volumes:
+      - ./backend:/app
 
   backend: 
     depends_on: 
@@ -16,6 +18,8 @@ services:
       - 3001:3001
     environment: 
       DB_URL: mongodb://db/vidly
+    volumes:
+      - ./backend:/app
     command: ./docker-entrypoint.sh
 
   db:
