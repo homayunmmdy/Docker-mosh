@@ -361,3 +361,9 @@ no if you run  `docker-compose build` it's very fast becuase it's read all the d
 and if you check the  `docker images` you see all services in compose file as image.
 
 `docker-compose build --no-cash` : to not read from the cash
+
+## Starting and Stoppping the application
+`docker-compose up -d` : Running the docker in the background
+`docker-copose ps` : all relavetn container to this application
+`docker ps` : all running application across all the application
+`docker-compose down` : stop and remove the containers but images are still there
