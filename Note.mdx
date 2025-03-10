@@ -378,3 +378,19 @@ in the application we have three host that are talk to each other client api and
 
 ## Publishing Changes
 the volumes directive is used to manage persistent data storage for the services. For the frontend and backend services, the volumes field maps the local ./backend directory to the /app directory inside the container, enabling file sharing and live code updates. For the db service, a named volume vidly is used to persist MongoDB data at /data/db, ensuring data is retained even if the container is restarted or removed. The volumes section at the bottom defines the vidly volume for use across the services.
+
+## Running test
+running the test in docker is not good idea because it's slow but if you want to write test in docker-compose you do it like this 
+we add new server for testing
+
+the good thing that we can run frontend and backend like the same at the same time but it's slow
+```
+  services 
+    web-test:
+      image: NameWebImage
+      volumes:
+        - ./frontend:/app
+      command: npm test
+
+```
+
