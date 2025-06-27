@@ -26,3 +26,8 @@ This comprehensive course provides a practical, hands-on guide to mastering Dock
 ### 🚀 Why It Matters
 
 Containerization is an essential skill in modern software development and deployment workflows. By completing this course and building this reference repository, I’ve developed confidence in using Docker to build efficient, reproducible development environments and production-ready container setups. I continue to revisit and update these notes to strengthen and maintain my Docker proficiency.
+
+### 📢 Note on Course Access
+Due to international sanctions in Iran, I was unable to access the official Code With Mosh platform directly. I obtained the course through a third-party distributor and completed it in full. While I do not have an official certificate, I carefully followed all course content and documented my learning here.
+
+For courses that included hands-on projects, the completed work is available in this repository. For others that were more theory-focused, I’ve included comprehensive notes, summaries, and all relevant materials as evidence of completion and understanding.
